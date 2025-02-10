@@ -1,0 +1,25 @@
+<div class="px-1 lg:px-base">
+    <!--recommends section-->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-8">
+        @for (recommend of recommendeds; track $index) {
+            <div class="flex flex-col gap-2 justify-center items-center text-center w-auto h-[144px] bg-dark-600 cursor-pointer">
+                <p class="text-primary-300 text-[22px] font-normal leading-[27px] uppercase">recommend</p>
+                <p class="text-primary-300 text-[22px] font-normal leading-[27px] uppercase">{{recommend.type}}</p>
+                <div class="w-[56px] h-[1px] bg-light"></div>
+                <p class="text-[18px] font-light leading-[26px] text-light">{{recommend.description}}</p>
+            </div>
+        }
+    </div>
+
+    <!--column items section-->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-8 gap-2">
+        @for (card of cards; track $index) {
+        <arent-card [url]="card.imgUrl" [text]="card.text" [desc]="card.descriptions" [hashtag]="card.hashtag" />
+        }
+      </div>
+
+      <!--button add new item-->
+      <div class="flex justify-center pb-[64px]">
+        <arent-button (click)="addItem()" text="コラムをもっと見る" />
+      </div>
+</div>

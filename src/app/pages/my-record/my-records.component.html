@@ -1,0 +1,112 @@
+<div class="flex flex-col gap-8 px-1 lg:px-base">
+  <!--control board-->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 py-8">
+    @for (record of records; track $index) {
+    <arent-record
+      [urlImage]="record.urlImage"
+      [title]="record.title"
+      [description]="record.description"
+    />
+    }
+  </div>
+  <!--my body record section-->
+  <div class="flex flex-col gap-2 [500px] bg-dark-500 p-4">
+    <!--title-->
+    <div class="flex gap-4 items-center">
+      <span
+        class="font-normal text-light text-[15px] leading-[18px] tracking-[0.15px]"
+        >BODY RECORD</span
+      >
+      <span
+        class="font-normal text-light text-[22px] leading-[27px] tracking-[0.11px]"
+        >2021.05.21</span
+      >
+    </div>
+
+    <!--chart-->
+    <div class="chart-wrapper">
+      <canvas
+        baseChart
+        width="auto"
+        height="80%"
+        type="line"
+        [data]="lineChartData"
+      ></canvas>
+    </div>
+
+    <!--filter button group-->
+    <div class="flex gap-4">
+      <button
+        class="bg-light text-center text-primary-300 w-[56px] h-[24px] rounded-[11px] cursor-pointer hover:text-light hover:bg-primary-300 focus:text-light focus:bg-primary-300"
+      >
+        日
+      </button>
+      <button
+        class="bg-light text-center text-primary-300 w-[56px] h-[24px] rounded-[11px] cursor-pointer hover:text-light hover:bg-primary-300 focus:text-light focus:bg-primary-300"
+      >
+        週
+      </button>
+      <button
+        class="bg-light text-center text-primary-300 w-[56px] h-[24px] rounded-[11px] cursor-pointer hover:text-light hover:bg-primary-300 focus:text-light focus:bg-primary-300"
+      >
+        月
+      </button>
+      <button
+        class="bg-light text-center text-primary-300 w-[56px] h-[24px] rounded-[11px] cursor-pointer hover:text-light hover:bg-primary-300 focus:text-light focus:bg-primary-300"
+      >
+        年
+      </button>
+    </div>
+  </div>
+  <!--my exersise section-->
+  <div class="bg-dark-500 h-[264px] p-4">
+    <!--title-->
+    <div class="flex gap-4 items-center">
+      <span
+        class="font-normal text-light text-[15px] leading-[18px] tracking-[0.15px]"
+        >MY EXERCISE</span
+      >
+      <span
+        class="font-normal text-light text-[22px] leading-[27px] tracking-[0.11px]"
+        >2021.05.21</span
+      >
+    </div>
+
+    <!--exercise items-->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-8 gap-y-2 max-h-3/4 overflow-auto pr-4">
+      @for (exercise of exercises; track $index) {
+      <arent-exersise-option
+        [title]="exercise.title"
+        [kcal]="exercise.kcal"
+        [time]="exercise.time"
+      />
+      }
+    </div>
+  </div>
+  <!--my diary section-->
+  <div>
+    <!--title-->
+    <p
+      class="text-dark-500 font-normal text-[22px] leading-[27px] tracking-[0.11px] block"
+    >
+      MY DIARY
+    </p>
+
+    <!--diary items-->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+      @for (diary of diaries; track $index) {
+      <arent-diary
+        [date]="diary.date"
+        [hour]="diary.hour"
+        [title]="diary.title"
+        [desc]="diary.desc"
+      />
+      }
+    </div>
+  </div>
+
+  <!--button add new item-->
+  <div class="flex justify-center pb-[64px]">
+    <arent-button (click)="addDiary()" text="自分の日記をもっと見る" />
+  </div>
+</div>

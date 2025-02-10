@@ -1,0 +1,16 @@
+.bullet-item {
+    position: relative;
+    padding-left: 20px;
+    font-size: 8px;
+}
+
+.bullet-item::before {
+    content: '';                
+    position: absolute;
+    left: 0;
+    top: 5px;                  
+    width: 6px;                 
+    height: 6px;                
+    background-color: white;    
+    border-radius: 50%;         
+}

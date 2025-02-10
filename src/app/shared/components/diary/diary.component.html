@@ -1,0 +1,20 @@
+<div
+  class="flex flex-col h-[231px] w-auto border-[2px] border-solid border-black p-4"
+>
+  <p class="font-normal text-[18px] leading-[22px] tracking-[0.09px]">
+    {{ date() }}
+  </p>
+  <p class="font-normal text-[18px] leading-[22px] tracking-[0.09px]">
+    {{ hour() }}
+  </p>
+  <p
+    class="font-light text-[12px] leading-[17px] tracking-[0.06px] text-wrap pt-4"
+  >
+    {{ title() }}
+  </p>
+  <p
+    class="font-light text-[12px] leading-[17px] tracking-[0.06px] line-clamp-5"
+  >
+    {{ desc() }}
+  </p>
+</div>

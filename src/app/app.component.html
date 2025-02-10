@@ -1,0 +1,15 @@
+<div class="relative">
+  <!--layout-->
+  <arent-private-layout>
+    <router-outlet />
+  </arent-private-layout>
+  <!--srcoll to top button-->
+  @if(isScrolled) {
+  <div
+    class="flex items-center justify-center bg-light text-light fixed bottom-40 right-10 cursor-pointer h-[48px] w-[48px] border border-gray-400 rounded-[50%] hover:opacity-50"
+    (click)="scrollToTop()"
+  >
+    <img src="icons/ic-arrow-up.svg" alt="icon-arrow-up" />
+  </div>
+  }
+</div>
